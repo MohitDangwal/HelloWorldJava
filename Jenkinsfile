@@ -4,8 +4,10 @@ pipeline {
     stage('Checkout') {
       steps {
         echo 'Checkout stage'
-        dir(path: 'env:WORKSPACE')
-        bat(script: 'dir "%~dp0"', encoding: 'UTF-8', label: 'List Directory')
+        dir(path: 'env:WORKSPACE') {
+          echo 'Inside workspace'
+        }
+
       }
     }
 
