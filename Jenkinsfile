@@ -8,6 +8,7 @@ pipeline {
           echo 'Inside workspace'
         }
 
+        powershell 'Get-ChildItem'
       }
     }
 
