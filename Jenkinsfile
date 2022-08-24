@@ -5,8 +5,7 @@ pipeline {
       steps {
         echo 'Checkout stage'
         dir(path: 'env:WORKSPACE')
-        git(url: 'git@github.com:MohitDangwal/HelloWorldJava.git', credentialsId: 'GithubHelloWorld')
-        bat(script: 'dir', returnStatus: true, returnStdout: true)
+        bat(script: 'dir "%~dp0"', encoding: 'UTF-8', label: 'List Directory')
       }
     }
 
